@@ -5,7 +5,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 -->
 <html>
     <head>
-        <title>Database</title>
+        <title>Dummy</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
@@ -15,36 +15,24 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
     <body>
         <div th:insert="/menu :: menu"></div>
         <div class="container mt-3 mb-3">
-            <div align="center" class>Database KTP Indonesia</div>
             <a href="/create" class="btn btn-success m-1">Data Baru</a>
-            <a href="/createKtp" class="btn btn-info">Tambah Data</a>
             <div class="table-responsive">
+                <a href="/create" class="btn btn-success">Create</a>
                 <table class="table align-middle table-striped table-bordered">
                     <tr class="table-dark">
                         <th>NIK</th>
-                        <th>Nama</th>
                         <th>Tanggal Lahir</th>
-                        <th>Jenis Kelamin</th>
-                        <th>Alamat</th>
-                        <th>Action</th>
-                    </tr>
-                    <tr th:each="godata:${goData}">
-                        <td th:text="${godata.noktp}"></td>
-                        <td th:text="${godata.nama}"></td>
-                        <td th:text="${#calendars.format(godata.tgllahir,'dd-MMM-yyyy')}"></td>
-                        <td th:text="${godata.jeniskelamin}"></td>
-                        <td th:text="${godata.alamat}"></td>
+                        <th>Foto</th>
 
-                        <td>
-                            <a class="btn btn-primary" href="/detail">Detail</a>
-                            <a class="btn btn-warning" href="/edit">Edit</a>
-                            <a class="btn btn-danger" href="/delete">Delete</a>
-                        </td>
+                    </tr>
+                    <tr th:each="godummy:${goDummy}">
+                        <td th:text="${godummy.id}"></td>
+                        <td th:text="${#calendars.format(godummy.tanggal,'dd-MMM-yyyy')}"></td>
+                        <td th:text="${godummy.foto}"></td>
                     </tr>
                 </table>
             </div>
-
         </div>
-        <div th:insert="/footer :: footer"></div>
     </body>
+    <div th:insert="/footer :: footer"></div>
 </html>

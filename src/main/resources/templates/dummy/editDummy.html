@@ -5,9 +5,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 -->
 <html>
     <head>
-        <title>Dummy</title>
+        <title>Edit Dummy</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     </head>
     <body>
         <div class="card m-5">
@@ -15,7 +18,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 <h5 class="card-title" align="center" style="color:white">Dummy Creating</h5>
             </div>
             <div class="card-body">
-                <form action="/savedummy" class="form" method="post" enctype="multipart/form-data">
+                <form action="/updatedummy" class="form" method="post" enctype="multipart/form-data">
                     <div class="form-group mb-3">
                         <label for="id" class="form-label">ID</label>
                         <input type="text" class="form-control" id="id" placeholder="ID">
@@ -35,28 +38,5 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 </form>
             </div>
         </div>
-<!--        <div>Dummy Creating</div>
-        <hr>
-        <form action="/newdata" method="post" enctype="multipart/form-data">
-            <table>
-                <tr>
-                    <td>ID</td>
-                    <td><input type="text" name="id"></td>
-                </tr>
-                <tr>
-                    <td>Tanggal Lahir</td>
-                    <td><input type="date" name="tanggal"></td>
-                </tr>
-                <tr>
-                    <td>Foto</td>
-                    <td><input type="file" name="gambar"></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><button type="submit">Submit</button></td>
-                </tr>
-            </table>
-        </form>-->
-        
     </body>
 </html>
