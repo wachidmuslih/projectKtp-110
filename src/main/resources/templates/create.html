@@ -18,7 +18,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 <h5 class="card-title" align="center" style="color:white">Tambah Data</h5>
             </div>
             <div class="card-body">
-                <form action="@{/simpandata}" class="form" method="POST" enctype="multipart/form-data">
+                <a th:href="@{/data}" class="btn btn-danger">Kembali</a>
+                <form th:action="@{/simpandata}" class="form" method="POST" enctype="multipart/form-data">
                     <div class="form-group mb-3">
                         <label for="noktp" class="form-label">NIK</label>
                         <input type="text" class="form-control" id="noktp" placeholder="NIK" name="noktp">
@@ -77,7 +78,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         <input type="file" class="form-control" id="foto" placeholder="Foto" name="foto">
                     </div>
                     <div class="mb-3">
-                        <a href="/data" class="btn btn-danger">Kembali</a>
+                        
                         <button type="submit" class="btn btn-success" aria-label="Close">Save</button>
                     </div>
                 </form>

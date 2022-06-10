@@ -15,9 +15,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
     <body>
         <div th:insert="/menu :: menu"></div>
         <div class="container mt-3 mb-3">
-            <a href="/create" class="btn btn-success m-1">Data Baru</a>
+            <a th:href="@{/create}" class="btn btn-success m-1">Data Baru</a>
             <div class="table-responsive">
-                <a href="/create" class="btn btn-success">Create</a>
                 <table class="table align-middle table-striped table-bordered">
                     <tr class="table-dark">
                         <th>NIK</th>
@@ -30,9 +29,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         <td th:text="${#calendars.format(godummy.tanggal,'dd-MMM-yyyy')}"></td>
                         <td th:text="${godummy.foto}"></td>
                         <td>
-                            <a class="btn btn-primary" th:href="@{/detail/{id}(id=${godummy.id})}">Detail</a>
-                            <a class="btn btn-warning" th:href="@{/edit/{id}(id=${godummy.id})}">Edit</a>
-                            <a class="btn btn-danger" th:href="@{/delete/{id}(id=${godummy.id})}" onclick="return confirm('Apakah Anda yakin menghapus data?')">Delete</a>
+                            <a class="btn btn-primary" th:href="@{/dummy/detail/{id}(id=${godummy.id})}">Detail</a>
+                            <a class="btn btn-warning" th:href="@{/dummy/edit/{id}(id=${godummy.id})}">Edit</a>
+                            <a class="btn btn-danger" th:href="@{/dummy/delete/{id}(id=${godummy.id})}" onclick="return confirm('Apakah Anda yakin menghapus data?')">Delete</a>
                         </td>
                     </tr>
                 </table>

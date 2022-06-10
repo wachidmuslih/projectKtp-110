@@ -40,7 +40,7 @@ public class DummyController {
     
     @RequestMapping("/read")
 //    @ResponseBody
-    public List<Dummy> getDummy(Model model)
+    public String getDummy(Model model)
     {
         try{
             data = dummyCtrl.findDummyEntities();
@@ -49,7 +49,7 @@ public class DummyController {
             e.getMessage();
         }
         model.addAttribute("data", data);
-        return data;
+        return "dummy/dummy";
     } 
     
     @RequestMapping("/create")
@@ -58,8 +58,8 @@ public class DummyController {
     }
     
     
-    @PostMapping(value = "/newdatadum", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public String newDummy(@RequestParam("gambar") MultipartFile file, HttpServletRequest request, HttpServletResponse response ) throws ParseException, Exception{
+    @PostMapping(value = "/dummy/newdatadum", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public RedirectView newDummy(@RequestParam("gambar") MultipartFile file, HttpServletRequest request, HttpServletResponse response ) throws ParseException, Exception{
         
         Dummy dumdata = new Dummy();
         String id = request.getParameter("id");
@@ -80,10 +80,10 @@ public class DummyController {
         response.sendRedirect("/read");
         
         //dummyController.create(dumdata);
-        return "dummy/create";
+        return new RedirectView("/ktp/read");
     }
     
-    @GetMapping("/detail/{id}")
+    @GetMapping("/dummy/detail/{id}")
     public String detail(@PathVariable int id, Model model) {
         Dummy data = dummyCtrl.findDummy(id);
         
@@ -100,7 +100,7 @@ public class DummyController {
         return "dummy/detailDum";
     }
     
-    @GetMapping("/edit/{id}")
+    @GetMapping("/dummy/edit/{id}")
     public String edit(@PathVariable int id, Model model) {
         Dummy data = new Dummy();
         try {
@@ -120,7 +120,7 @@ public class DummyController {
         model.addAttribute("data", data);
         return "dummy/editDummy";
     }
-    @PostMapping(value = "/update/{id}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    @PostMapping(value = "/dummy/update/{id}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public RedirectView update(@PathVariable String id, HttpServletRequest request, @RequestParam("foto") MultipartFile file) throws ParseException, IOException, Exception {
         Dummy data = new Dummy();
         
@@ -143,12 +143,12 @@ public class DummyController {
         
         
         dummyCtrl.edit(data);
-        return new RedirectView("/read");
+        return new RedirectView("/ktp/read");
     }
     
-    @GetMapping("/hapus/{id}")
+    @GetMapping("/dummy/hapus/{id}")
     public RedirectView destroy(@PathVariable int id) throws NonexistentEntityException {
         dummyCtrl.destroy(id);
-        return new RedirectView("/read");
+        return new RedirectView("/ktp/read");
     }
 }

@@ -15,6 +15,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 <div class="card-header bg-dark">
                     <h5 class="card-title" align="center" style="color:white">Detail Dummy</h5>
                 </div>
+                <a class="btn btn-danger" th:href="@{/read}">Kembali</a>
                 <div class="card-body">
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">ID</label>
@@ -26,10 +27,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Foto</label>
-                        <img th:src="${dummy.gambar}" style="width: 200px">
+                        <img th:src="${gambar}" style="width: 200px">
                     </div>
                     <div class="mb-3">
-                        <a class="btn btn-danger" href="/read">Kembali</a>
+                        
                     </div> 
                 </div>
             </div>

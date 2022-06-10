@@ -8,6 +8,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <title>Dummy</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     </head>
     <body>
         <div class="card m-5">
@@ -15,21 +18,22 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 <h5 class="card-title" align="center" style="color:white">Dummy Creating</h5>
             </div>
             <div class="card-body">
-                <form action="@{dummy/newdatadum}" class="form" method="POST" enctype="multipart/form-data">
+                <a th:href="@{/read}" class="btn btn-danger">Kembali</a>
+                <form action="@{/dummy/newdatadum}" class="form" method="POST" enctype="multipart/form-data">
                     <div class="form-group mb-3">
                         <label for="id" class="form-label">ID</label>
                         <input type="text" class="form-control" id="id" placeholder="ID" name="id">
                     </div>
                     <div class="form-group mb-3">
                         <label for="tanggal" class="form-label">Tanggal</label>
-                        <input type="date" class="form-control" id="tanggal" placeholder="Tanggal" name="id">
+                        <input type="date" class="form-control" id="tanggal" placeholder="Tanggal" name="tanggal">
                     </div>
                     <div class="form-group mb-3">
                         <label for="gambar" class="form-label">Gambar</label>
                         <input type="file" class="form-control" id="gambar" placeholder="Gambar" name="gambar">
                     </div>
                     <div class="mb-3">
-                        <a href="/read" class="btn btn-danger">Kembali</a>
+                        
                         <button type="submit" class="btn btn-success" aria-label="Close">Save</button>
                     </div>
                 </form>

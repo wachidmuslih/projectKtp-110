@@ -18,7 +18,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 <h5 class="card-title" align="center" style="color:white">Dummy Creating</h5>
             </div>
             <div class="card-body">
-                <form th:action="@{/update/{id}(id=${dummy.id})}" method="POST" enctype="multipart/form-data">
+                <a th:href="@{/read}" class="btn btn-danger">Kembali</a>
+                <form th:action="@{/dummy/update/{id}(id=${dummy.id})}" method="POST" enctype="multipart/form-data">
                     <div class="form-group mb-3">
                         <label for="id" class="form-label">ID</label>
                         <input type="text" class="form-control" id="id" placeholder="ID" name="id" th:value="${dummy.id}">
@@ -33,7 +34,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         <input type="file" class="form-control" id="gambar" placeholder="Gambar" name="gambar" th:src="${gambar}">
                     </div>
                     <div class="mb-3">
-                        <a href="/read" class="btn btn-danger">Kembali</a>
+                        
                         <button type="submit" class="btn btn-success" aria-label="Close">Save</button>
                     </div>
                 </form>

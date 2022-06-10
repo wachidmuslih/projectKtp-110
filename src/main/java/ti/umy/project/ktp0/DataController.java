@@ -93,7 +93,7 @@ public class DataController {
         data.setFoto(foto);
         
         datactrl.create(data);
-        return new RedirectView("/data");
+        return new RedirectView("/ktp/data");
     }
     
     
@@ -127,7 +127,7 @@ public class DataController {
             byte[] photo = data.getFoto();
             String base64Image = Base64.getEncoder().encodeToString(photo);
             String imgLink = "data:image/jpg;base64,".concat(base64Image);
-            model.addAttribute("photo", imgLink);
+            model.addAttribute("foto", imgLink);
         } else {
             model.addAttribute("foto", "");
         }
@@ -173,7 +173,7 @@ public class DataController {
         data.setBerlakuhingga("SEUMUR HIDUP");
         
         datactrl.edit(data);
-        return new RedirectView("/data");
+        return new RedirectView("/ktp/data");
     }
     @GetMapping("/delete/{id}")
     public RedirectView destroy(@PathVariable Long id) throws NonexistentEntityException{
@@ -185,6 +185,6 @@ public class DataController {
         }catch(Exception e){
             
         }
-        return new RedirectView("/data");
+        return new RedirectView("/ktp/data");
     }
 }
