@@ -23,12 +23,17 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         <th>NIK</th>
                         <th>Tanggal Lahir</th>
                         <th>Foto</th>
-
+                        <th>Aksi</th>
                     </tr>
                     <tr th:each="godummy:${goDummy}">
                         <td th:text="${godummy.id}"></td>
                         <td th:text="${#calendars.format(godummy.tanggal,'dd-MMM-yyyy')}"></td>
                         <td th:text="${godummy.foto}"></td>
+                        <td>
+                            <a class="btn btn-primary" th:href="@{/detail/{id}(id=${godummy.id})}">Detail</a>
+                            <a class="btn btn-warning" th:href="@{/edit/{id}(id=${godummy.id})}">Edit</a>
+                            <a class="btn btn-danger" th:href="@{/delete/{id}(id=${godummy.id})}" onclick="return confirm('Apakah Anda yakin menghapus data?')">Delete</a>
+                        </td>
                     </tr>
                 </table>
             </div>

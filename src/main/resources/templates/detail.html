@@ -21,47 +21,50 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 <div class="card-body">
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">NIK</label>
-                        <p th:text="${godata.noktp}"></p>
+                        <p th:text="${data.noktp}"></p>
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Nama</label>
-                        <p th:text="${godata.nama}"></p>
+                        <p th:text="${data.nama}"></p>
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Tanggal Lahir</label>
-                        <p th:text="${#calendars.format(godata.tgllahir,'dd-MMM-yyyy')}"></p>
+                        <p th:text="${#calendars.format(data.tgllahir,'dd-MMM-yyyy')}"></p>
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Jenis Kelamin</label>
-                        <p th:text="${godata.jeniskelamin}"></p>
+                        <p th:text="${data.jeniskelamin}"></p>
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Agama</label>
-                        <p th:text="${godata.agama}"></p>
+                        <p th:text="${data.agama}"></p>
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Alamat</label>
-                        <p th:text="${godata.alamat}"></p>
+                        <p th:text="${data.alamat}"></p>
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Status Perkawinan</label>
-                        <p th:text="${godata.status}"></p>
+                        <p th:text="${data.status}"></p>
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Pekerjaan</label>
-                        <p th:text="${godata.pekerjaan}"></p>
+                        <p th:text="${data.pekerjaan}"></p>
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Kewarganegaraan</label>
-                        <p th:text="${godata.warganegara}"></p>
+                        <p th:text="${data.warganegara}"></p>
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Berlaku Hingga</label>
-                        <p th:text="${godata.berlakuhingga}"></p>
+                        <p th:text="${data.berlakuhingga}"></p>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Foto</label>
+                        <img th:src="${data.foto}" style="width: 200px">
                     </div>
                     <div class="mb-3">
                         <a class="btn btn-danger" href="/data">Kembali</a>
-                        
                     </div> 
                 </div>
             </div>

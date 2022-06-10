@@ -7,11 +7,26 @@
         "th:insert": {
             "context": "div"
         },
+        "th:src": {
+            "context": "img"
+        },
+        "th:action": {
+            "context": "form"
+        },
         "th:fragment": {
             "context": "footer"
         },
         "th:each": {
             "context": "tr"
+        },
+        "th:field": {
+            "context": "select"
+        },
+        "th:href": {
+            "context": "a"
+        },
+        "th:value": {
+            "context": "input"
         }
     }
 }

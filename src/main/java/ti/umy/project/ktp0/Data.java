@@ -40,6 +40,11 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Data.findByBerlakuhingga", query = "SELECT d FROM Data d WHERE d.berlakuhingga = :berlakuhingga")})
 public class Data implements Serializable {
 
+    @Basic(optional = false)
+    @Lob
+    @Column(name = "foto")
+    private byte[] foto;
+
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
@@ -76,10 +81,6 @@ public class Data implements Serializable {
     @Basic(optional = false)
     @Column(name = "berlakuhingga")
     private String berlakuhingga;
-    @Basic(optional = false)
-    @Lob
-    @Column(name = "foto")
-    private byte[] foto;
 
     public Data() {
     }
@@ -191,13 +192,6 @@ public class Data implements Serializable {
         this.berlakuhingga = berlakuhingga;
     }
 
-    public byte[] getFoto() {
-        return foto;
-    }
-
-    public void setFoto(byte[] foto) {
-        this.foto = foto;
-    }
 
     @Override
     public int hashCode() {
@@ -222,6 +216,18 @@ public class Data implements Serializable {
     @Override
     public String toString() {
         return "ti.umy.project.ktp0.Data[ id=" + id + " ]";
+    }
+
+//    void setNoKtp(String noKtp) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
+
+    public byte[] getFoto() {
+        return foto;
+    }
+
+    public void setFoto(byte[] foto) {
+        this.foto = foto;
     }
     
 }

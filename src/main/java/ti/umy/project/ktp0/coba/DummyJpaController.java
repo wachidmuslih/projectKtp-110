@@ -14,7 +14,6 @@ import javax.persistence.Persistence;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import ti.umy.project.ktp0.coba.exceptions.NonexistentEntityException;
-import ti.umy.project.ktp0.coba.exceptions.PreexistingEntityException;
 
 /**
  *
@@ -29,24 +28,18 @@ public class DummyJpaController implements Serializable {
 
     public DummyJpaController() {
     }
-    
 
     public EntityManager getEntityManager() {
         return emf.createEntityManager();
     }
 
-    public void create(Dummy dummy) throws PreexistingEntityException, Exception {
+    public void create(Dummy dummy) {
         EntityManager em = null;
         try {
             em = getEntityManager();
             em.getTransaction().begin();
             em.persist(dummy);
             em.getTransaction().commit();
-        } catch (Exception ex) {
-            if (findDummy(dummy.getId()) != null) {
-                throw new PreexistingEntityException("Dummy " + dummy + " already exists.", ex);
-            }
-            throw ex;
         } finally {
             if (em != null) {
                 em.close();

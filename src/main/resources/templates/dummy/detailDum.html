@@ -18,18 +18,18 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 <div class="card-body">
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">ID</label>
-                        <p th:text="${godata.noktp}"></p>
+                        <p th:text="${dummy.id}"></p>
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Tanggal Lahir</label>
-                        <p th:text="${#calendars.format(godata.tgllahir,'dd-MMM-yyyy')}"></p>
+                        <p th:text="${#calendars.format(dummy.tanggal,'dd-MMM-yyyy')}"></p>
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Foto</label>
-                        <p th:text="${godata.berlakuhingga}"></p>
+                        <img th:src="${dummy.gambar}" style="width: 200px">
                     </div>
                     <div class="mb-3">
-                        <a class="btn btn-danger" href="/data">Kembali</a>
+                        <a class="btn btn-danger" href="/read">Kembali</a>
                     </div> 
                 </div>
             </div>

@@ -16,8 +16,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <div th:insert="/menu :: menu"></div>
         <div class="container mt-3 mb-3">
             <div align="center" class>Database KTP Indonesia</div>
-            <a href="/create" class="btn btn-success m-1">Data Baru</a>
-            <a href="/createKtp" class="btn btn-info">Tambah Data</a>
+            <a th:href="@{/tambah}" class="btn btn-info mb-3">Tambah Data</a>
             <div class="table-responsive">
                 <table class="table align-middle table-striped table-bordered">
                     <tr class="table-dark">
@@ -36,9 +35,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         <td th:text="${godata.alamat}"></td>
 
                         <td>
-                            <a class="btn btn-primary" href="/detail">Detail</a>
-                            <a class="btn btn-warning" href="/edit">Edit</a>
-                            <a class="btn btn-danger" href="/delete">Delete</a>
+                            <a class="btn btn-primary" th:href="@{/detail/{id}(id=${godata.id})}">Detail</a>
+                            <a class="btn btn-warning" th:href="@{/edit/{id}(id=${godata.id})}">Edit</a>
+                            <a class="btn btn-danger" th:href="@{/delete/{id}(id=${godata.id})}" onclick="return confirm('Apakah Anda yakin menghapus data?')">Delete</a>
                         </td>
                     </tr>
                 </table>
